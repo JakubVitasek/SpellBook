@@ -15,7 +15,7 @@
   <ItemGroup>
     <Content Include="txt\spellform.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <CustomToolNamespace>spellform.txt</CustomToolNamespace>
+      <CustomToolNamespace>spellform</CustomToolNamespace>
     </Content>
     <Content Include="txt\spelltypes.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

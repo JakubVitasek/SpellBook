@@ -11,19 +11,15 @@ namespace SpellBook
         public Random generator = new Random();
         public string[] PoleZTextu(string adresaSouboru)
         {
-            string obsahTxt = File.ReadAllText("plocha/spellform.txt");
-            string obsahTxt2 = File.ReadAllText("plocha/spelltypes.txt");
-            int delka1 = obsahTxt.Length;
-            int delka2 = obsahTxt2.Length;
-            string[] poleForma = obsahTxt.Split(";");
-            string[] poleTypy = obsahTxt.Split(";");
-
+            string ObsahTXT = File.ReadAllText(adresaSouboru);
+            string[] obsah = ObsahTXT.Split(";");
+            return obsah;
         }
         public string VygenerujemeSpellName(string[] poleForma, string[] poleTypy)
         {
             int indexForma = VygenerujCisloMax(poleForma.Length - 1);
-            int indexTypy = generator.Next(0, poleTypy.Length - 1);
-            string spojene = (indexForma + indexTypy).ToString();
+            int indexTypy = generator.Next(poleTypy.Length - 1);
+            string spojene = $"{poleTypy[indexTypy]} {poleForma[indexForma]}";
             return spojene;
 
         }
